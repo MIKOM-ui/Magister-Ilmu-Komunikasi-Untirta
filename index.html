@@ -4,222 +4,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Magister Ilmu Komunikasi FISIP UNTIRTA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/id/7/76/Logo_UNTIRTA.png">
   <style>
-    :root {
-      --biru: #004aad;
-      --kuning: #ffcc00;
-      --putih: #ffffff;
-      --abu: #f6f7fb;
-      --gelap: #1b1b1b;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    }
-
     body {
-      font-family: "Poppins", sans-serif;
-      background: var(--abu);
-      color: var(--gelap);
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    /* HEADER */
-    header {
-      background: linear-gradient(135deg, var(--biru), #0073e6);
-      color: var(--putih);
-      padding: 3rem 1rem 2rem;
-      border-radius: 0 0 30px 30px;
-      box-shadow: var(--shadow);
-      position: relative;
-    }
-
-    header img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    header h1 {
-      font-size: 1.7rem;
-      margin-bottom: 0.3rem;
-    }
-
-    header h2 {
-      font-size: 1rem;
-      font-weight: 400;
-      opacity: 0.9;
-      margin-bottom: 1rem;
-    }
-
-    .cta {
-      display: inline-block;
-      background: var(--kuning);
-      color: var(--gelap);
-      padding: 0.8rem 1.6rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .cta:hover {
-      background: #ffd633;
-      transform: scale(1.05);
-    }
-
-    section {
-      padding: 2rem 1.5rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    /* CARD SECTION */
-    .card {
-      background: var(--putih);
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      text-align: left;
-    }
-
-    .card h3 {
-      color: var(--biru);
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .card ul {
-      list-style: none;
-      padding: 0;
-      line-height: 1.8;
-      font-size: 0.95rem;
-    }
-
-    /* JADWAL SECTION */
-    .jadwal-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.2rem;
-    }
-
-    .jadwal-card {
-      background: var(--putih);
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-      padding: 1.2rem;
-      border-left: 8px solid var(--biru);
-    }
-
-    .jadwal-card h4 {
-      color: var(--biru);
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .jadwal-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0.4rem 0;
-      padding: 0.4rem 0.6rem;
-      background: var(--abu);
-      border-radius: 10px;
-    }
-
-    .jadwal-item span {
-      color: var(--biru);
-      font-weight: 600;
-    }
-
-    /* LINK GROUP */
-    .link-group a {
-      display: block;
-      background: var(--biru);
-      color: var(--putih);
-      text-decoration: none;
-      padding: 0.9rem;
-      border-radius: 12px;
-      margin: 0.4rem auto;
-      max-width: 400px;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .link-group a:hover {
-      background: #0066cc;
-      transform: scale(1.03);
-    }
-
-    footer {
-      background: var(--biru);
-      color: var(--putih);
-      padding: 1rem;
-      border-radius: 20px 20px 0 0;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-    }
-
-    @media (min-width: 600px) {
-      .jadwal-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      font-family: 'Poppins', sans-serif;
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-  <header>
-    <img src="https://upload.wikimedia.org/wikipedia/id/7/76/Logo_UNTIRTA.png">
-    <h1>Program Magister Ilmu Komunikasi</h1>
-    <h2>FISIP Universitas Sultan Ageng Tirtayasa</h2>
-    <a href="https://penerimaan.untirta.ac.id/JalurPenerimaan" class="cta">Daftar Sekarang</a>
+  <!-- HEADER -->
+  <header class="bg-gradient-to-br from-blue-800 to-blue-600 text-white text-center py-10 px-4 rounded-b-3xl shadow-lg">
+    <img src="https://upload.wikimedia.org/wikipedia/id/7/76/Logo_UNTIRTA.png" alt="Logo UNTIRTA" class="w-28 h-28 rounded-full mx-auto mb-4 shadow-md">
+    <h1 class="text-2xl font-semibold">Program Magister Ilmu Komunikasi</h1>
+    <h2 class="text-sm opacity-90 mb-5">FISIP Universitas Sultan Ageng Tirtayasa</h2>
+    <a href="https://penerimaan.untirta.ac.id/JalurPenerimaan"
+       class="bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded-full inline-block hover:bg-yellow-300 transition transform hover:scale-105">
+       Daftar Sekarang
+    </a>
   </header>
 
-  <section>
-    <div class="card">
-      <h3>🎓 Tentang Program</h3>
-      <ul>
-        <li><b>Fast Graduate Program</b> — Lulus hanya dalam 3 semester.</li>
+  <!-- MAIN CONTENT -->
+  <main class="max-w-4xl mx-auto px-5 py-10 space-y-10">
+
+    <!-- TENTANG PROGRAM -->
+    <section class="bg-white rounded-2xl shadow-md p-6">
+      <h3 class="text-xl font-bold text-blue-800 mb-4 text-center">🎓 Tentang Program</h3>
+      <ul class="space-y-3 text-sm md:text-base leading-relaxed">
+        <li><b>Fast Graduate Program</b> — Lulus hanya dalam <b>3 semester</b>.</li>
         <li><b>Kompetensi Keilmuan:</b> Komunikasi Pembangunan, Pengembangan Masyarakat, dan Manajemen CSR.</li>
         <li><b>Profil Lulusan:</b> Akademisi, Peneliti, Konsultan, dan Profesional Komunikasi.</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="card">
-      <h3>📅 Jadwal Penerimaan Mahasiswa Baru</h3>
-      <div class="jadwal-container">
-        <div class="jadwal-card">
-          <h4>Gelombang 1</h4>
-          <div class="jadwal-item">
-            <p>Pendaftaran</p><span>1 Okt – 25 Nov 2025</span>
-          </div>
-          <div class="jadwal-item">
-            <p>Seleksi</p><span>29 Nov 2025</span>
-          </div>
-          <div class="jadwal-item">
-            <p>Pengumuman</p><span>2 Des 2025</span>
-          </div>
+    <!-- JADWAL PMB -->
+    <section class="bg-white rounded-2xl shadow-md p-6">
+      <h3 class="text-xl font-bold text-blue-800 mb-6 text-center">📅 Jadwal Penerimaan Mahasiswa Baru (Gelombang 1)</h3>
+
+      <div class="grid gap-4 md:grid-cols-3">
+
+        <!-- Pendaftaran -->
+        <div class="bg-blue-50 border-l-8 border-blue-700 rounded-xl p-4 shadow-sm hover:shadow-md transition">
+          <h4 class="text-blue-700 font-semibold text-lg mb-2">Pendaftaran</h4>
+          <p class="text-gray-700 font-medium">1 Oktober – 25 November 2025</p>
         </div>
+
+        <!-- Seleksi -->
+        <div class="bg-blue-50 border-l-8 border-blue-700 rounded-xl p-4 shadow-sm hover:shadow-md transition">
+          <h4 class="text-blue-700 font-semibold text-lg mb-2">Seleksi</h4>
+          <p class="text-gray-700 font-medium">29 November 2025</p>
+        </div>
+
+        <!-- Pengumuman -->
+        <div class="bg-blue-50 border-l-8 border-blue-700 rounded-xl p-4 shadow-sm hover:shadow-md transition">
+          <h4 class="text-blue-700 font-semibold text-lg mb-2">Pengumuman</h4>
+          <p class="text-gray-700 font-medium">2 Desember 2025</p>
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <div class="card" style="text-align:center;">
-      <h3>📞 Narahubung</h3>
-      <p><b>0813-9819-5181</b></p>
+    <!-- KONTAK -->
+    <section class="bg-white rounded-2xl shadow-md p-6 text-center">
+      <h3 class="text-xl font-bold text-blue-800 mb-4">📞 Narahubung</h3>
+      <p class="text-lg font-semibold mb-5">0813-9819-5181</p>
 
-      <div class="link-group">
-        <a href="https://mikom.fisip.untirta.ac.id">🌐 Official Website</a>
-        <a href="https://pmb.untirta.ac.id">🧾 PMB UNTIRTA</a>
-        <a href="https://penerimaan.untirta.ac.id/JalurPenerimaan">📝 Jalur Penerimaan</a>
+      <div class="space-y-3">
+        <a href="https://mikom.fisip.untirta.ac.id" target="_blank"
+           class="block bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
+           🌐 Official Website
+        </a>
+        <a href="https://pmb.untirta.ac.id" target="_blank"
+           class="block bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
+           🧾 PMB UNTIRTA
+        </a>
+        <a href="https://penerimaan.untirta.ac.id/JalurPenerimaan" target="_blank"
+           class="block bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
+           📝 Jalur Penerimaan
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer>
-    © 2025 Program Magister Ilmu Komunikasi
+  <!-- FOOTER -->
+  <footer class="bg-blue-800 text-white text-center py-4 text-sm rounded-t-2xl shadow-inner">
+    © 2025 Program Magister Ilmu Komunikasi FISIP UNTIRTA
   </footer>
 
 </body>
