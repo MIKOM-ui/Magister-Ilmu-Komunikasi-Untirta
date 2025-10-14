@@ -14,6 +14,33 @@
       @apply bg-blue-700 text-white;
     }
   </style>
+  <script>
+    // Accordion toggle
+    function toggleAccordion(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle("hidden");
+    }
+
+    // === TAB HANDLER ===
+  const tabs = document.querySelectorAll(".tablink");
+  const contents = document.querySelectorAll(".tabcontent");
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      // Reset semua tab & konten
+      tabs.forEach(t => {
+        t.classList.remove("tab-active", "border-blue-700", "text-blue-700");
+        t.classList.add("bg-gray-200");
+      });
+      contents.forEach(c => c.classList.add("hidden"));
+
+      // Aktifkan tab & konten yang diklik
+      tab.classList.add("tab-active", "border-blue-700", "text-blue-700");
+      tab.classList.remove("bg-gray-200");
+      contents[index].classList.remove("hidden");
+    });
+  });
+  </script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -62,6 +89,63 @@
         </div>
       </div>
     </section>
+    
+    <section class="bg-white rounded-2xl shadow-md p-6">
+    <h3 class="text-xl md:text-2xl font-bold text-blue-800 text-center mb-4">🏛️ Visi, Misi, Tujuan & Strategi</h3>
+
+    <div class="space-y-3">
+      <div class="border rounded-lg bg-white shadow-sm">
+        <button onclick="toggleAccordion('visi')" class="w-full text-left px-5 py-3 font-semibold text-blue-700 flex justify-between">
+          Visi Magister Ilmu Komunikasi <span>▼</span>
+        </button>
+        <div id="visi" class="hidden px-5 pb-4">
+          <p>"Mewujudkan Program Studi Magister Ilmu Komunikasi FISIP Untirta Healthy, Integrated, Smart and Green (HITS and Green) University menuju PTN Berbadan Hukum yang Unggul, Berkarakter, dan Berdaya Saing di Bidang Komunikasi dan Perubahan Sosial pada Kawasan ASEAN Tahun 2030.”</p>
+        </div>
+      </div>
+
+      <div class="border rounded-lg bg-white shadow-sm">
+        <button onclick="toggleAccordion('misi')" class="w-full text-left px-5 py-3 font-semibold text-blue-700 flex justify-between">
+          Misi Magister Ilmu Komunikasi <span>▼</span>
+        </button>
+        <div id="misi" class="hidden px-5 pb-4">
+          <ol class="list-decimal ml-6 space-y-1">
+            <li>Meningkatkan penyelenggaraan pendidikan magister yang menghasilkan lulusan kompeten dan adaptif.</li>
+            <li>Mengadopsi perkembangan IPTEK di bidang komunikasi dan perubahan sosial.</li>
+            <li>Memasyarakatkan hasil riset komunikasi untuk kemajuan sosial.</li>
+            <li>Menjalin kolaborasi berkelanjutan dengan pihak nasional dan internasional.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="border rounded-lg bg-white shadow-sm">
+        <button onclick="toggleAccordion('tujuan')" class="w-full text-left px-5 py-3 font-semibold text-blue-700 flex justify-between">
+          Tujuan Magister Ilmu Komunikasi <span>▼</span>
+        </button>
+        <div id="tujuan" class="hidden px-5 pb-4">
+          <ol class="list-decimal ml-6 space-y-1">
+            <li>Menghasilkan lulusan yang inovatif dan kolaboratif.</li>
+            <li>Meningkatkan kualitas penelitian komunikasi untuk perubahan sosial.</li>
+            <li>Mendorong publikasi ilmiah bereputasi.</li>
+            <li>Membangun kerja sama tridharma berkelanjutan dengan berbagai pihak.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="border rounded-lg bg-white shadow-sm">
+        <button onclick="toggleAccordion('strategi')" class="w-full text-left px-5 py-3 font-semibold text-blue-700 flex justify-between">
+          Strategi Magister Ilmu Komunikasi <span>▼</span>
+        </button>
+        <div id="strategi" class="hidden px-5 pb-4">
+          <ol class="list-decimal ml-6 space-y-1">
+            <li>Penerapan kurikulum berbasis OBE dan Student Center Learning.</li>
+            <li>Penguatan kapasitas riset dan pengabdian dosen.</li>
+            <li>Hilirisasi hasil penelitian menjadi HKI dan paten.</li>
+            <li>Kerja sama nasional dan internasional berkelanjutan.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
 
     <!-- JADWAL PMB -->
     <section class="bg-white rounded-2xl shadow-md p-6">
@@ -90,11 +174,12 @@
       <h3 class="text-xl md:text-2xl font-bold text-blue-800 mb-6 text-center">📝 Persyaratan & Prosedur Pendaftaran</h3>
 
       <!-- Tabs -->
-      <div class="flex flex-wrap justify-center mb-6">
-        <button id="tab1" class="tab-active px-5 py-2 m-1 rounded-full font-semibold text-sm md:text-base hover:bg-blue-100 transition">Persyaratan</button>
-        <button id="tab2" class="px-5 py-2 m-1 rounded-full bg-gray-200 font-semibold text-sm md:text-base hover:bg-blue-100 transition">Prosedur</button>
-      </div>
-
+      <!-- Tabs -->
+<div class="flex flex-wrap justify-center mb-6">
+  <button id="tab1" class="tab-active px-5 py-2 m-1 rounded-full font-semibold text-sm md:text-base hover:bg-blue-100 transition">Persyaratan</button>
+  <button id="tab2" class="px-5 py-2 m-1 rounded-full bg-gray-200 font-semibold text-sm md:text-base hover:bg-blue-100 transition">Prosedur</button>
+  <button id="tab3" class="px-5 py-2 m-1 rounded-full bg-gray-200 font-semibold text-sm md:text-base hover:bg-blue-100 transition">Kurikulum</button>
+</div>
       <!-- Tab Contents -->
       <div id="content1" class="text-left space-y-4">
         <ul class="list-disc pl-5 leading-relaxed text-sm md:text-base">
@@ -111,7 +196,7 @@
       <div id="content2" class="hidden text-left space-y-4">
         <p class="leading-relaxed text-sm md:text-base">
           Pendaftaran dilakukan melalui halaman resmi <b>Penerimaan Mahasiswa Baru</b> dengan Formulir Pendaftaran
-UMM PASCASARJANA (Magister - S2). Setelah mengisi form, klik <b>Daftar</b> dan cetak formulir dan lakukan pembayaran melalui rekening <b>Virtual Account pembayaran</b> guna aktivasi pendaftaran.
+          UMM PASCASARJANA (Magister - S2). Setelah mengisi form, klik <b>Daftar</b> dan cetak formulir dan lakukan pembayaran melalui rekening <b>Virtual Account pembayaran</b> guna aktivasi pendaftaran.
         </p>
 
         <h4 class="font-semibold text-blue-800">💰 Biaya Pendaftaran & Perkuliahan:</h4>
@@ -124,12 +209,75 @@ UMM PASCASARJANA (Magister - S2). Setelah mengisi form, klik <b>Daftar</b> dan c
           </tbody>
         </table>
       </div>
+
+      <div id="content3" class="hidden text-left space-y-4">
+        <p class="leading-relaxed text-sm md:text-base">
+          Berikut mata kuliah Program Magister Ilmu Komunikasi FISIP Untirta:
+        </p>
+
+        <div class="overflow-x-auto">
+          <table class="table-auto border-collapse w-full text-sm md:text-base mt-3 text-center">
+            <thead class="bg-blue-100">
+              <tr>
+                <th class="border p-2">Semester</th>
+                <th class="border p-2">Mata Kuliah</th>
+                <th class="border p-2">SKS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="5" class="border p-2 font-semibold bg-gray-50">Semester 1<br><small>(15 SKS)</small></td>
+                <td class="border p-2">Filsafat dan Etika Komunikasi</td><td class="border p-2">3</td>
+              </tr>
+              <tr><td class="border p-2">Teori-Teori Komunikasi</td><td class="border p-2">3</td></tr>
+              <tr><td class="border p-2">Metode Penelitian Komunikasi Kuantitatif</td><td class="border p-2">3</td></tr>
+              <tr><td class="border p-2">Metode Penelitian Komunikasi Kualitatif</td><td class="border p-2">3</td></tr>
+              <tr><td class="border p-2">Komunikasi Pembangunan Berkelanjutan</td><td class="border p-2">3</td></tr>
+
+              <tr>
+                <td rowspan="6" class="border p-2 font-semibold bg-gray-50">Semester 2<br><small>(21 SKS)</small></td>
+                <td class="border p-2">Jurnalisme dan Public Relations Pembangunan</td><td class="border p-2">3</td>
+              </tr>
+              <tr><td class="border p-2">Manajemen CSR</td><td class="border p-2">3</td></tr>
+              <tr><td class="border p-2">Komunikasi Pemberdayaan Masyarakat</td><td class="border p-2">3</td></tr>
+              <tr><td class="border p-2">Komunikasi Lingkungan</td><td class="border p-2">3</td></tr>
+              <tr><td class="border p-2">Proposal</td><td class="border p-2">6</td></tr>
+              <tr>
+                <td class="border p-2 text-left">
+                  <p class="font-semibold mb-1">Mata Kuliah Pilihan (Pilih 1):</p>
+                  <ul class="list-disc pl-6 text-sm">
+                    <li>Komunikasi Krisis dan Bencana</li>
+                    <li>Komunikasi Gender</li>
+                    <li>Komunikasi & Perencanaan Pembangunan</li>
+                    <li>Komunikasi & Industri Kreatif</li>
+                  </ul>
+                </td>
+                <td class="border p-2 text-center">3</td>
+              </tr>
+
+              <tr>
+                <td rowspan="4" class="border p-2 font-semibold bg-gray-50">Semester 3<br><small>(19 SKS)</small></td>
+                <td class="border p-2">Seminar Hasil</td><td class="border p-2">2</td>
+              </tr>
+              <tr><td class="border p-2">Tesis</td><td class="border p-2">8</td></tr>
+              <tr><td class="border p-2">Penulisan Karya Ilmiah</td><td class="border p-2">3</td></tr>
+              <tr><td class="border p-2">Publikasi Ilmiah</td><td class="border p-2">6</td></tr>
+
+              <tr class="bg-blue-100 font-bold">
+                <td colspan="2" class="border p-2 text-right">Total SKS</td>
+                <td class="border p-2">55</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <div class="text-center mt-8">
           <a href="https://drive.google.com/file/d/1i-dgvgfrZAF5KvzE7XpJGppSNwAgfx84/view?usp=sharing"
            class="bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded-full inline-block hover:bg-yellow-300 transition transform hover:scale-105" target="_blank">
            Download Dokumen Pendaftaran
         </a>
-        </div>
+      </div>
     </section>
 
     <!-- KONTAK -->
@@ -168,23 +316,45 @@ UMM PASCASARJANA (Magister - S2). Setelah mengisi form, klik <b>Daftar</b> dan c
   <script>
     const tab1 = document.getElementById('tab1');
     const tab2 = document.getElementById('tab2');
+    const tab3 = document.getElementById('tab3');
     const content1 = document.getElementById('content1');
     const content2 = document.getElementById('content2');
+    const content3 = document.getElementById('content3');
 
     tab1.addEventListener('click', () => {
       tab1.classList.add('tab-active');
       tab2.classList.remove('tab-active');
       tab2.classList.add('bg-gray-200');
+      tab3.classList.remove('tab-active');
+      tab3.classList.add('bg-gray-200');
+
       content1.classList.remove('hidden');
       content2.classList.add('hidden');
+      content3.classList.add('hidden'); // ✅ perbaikan
     });
 
     tab2.addEventListener('click', () => {
       tab2.classList.add('tab-active');
       tab1.classList.remove('tab-active');
       tab1.classList.add('bg-gray-200');
+      tab3.classList.remove('tab-active');
+      tab3.classList.add('bg-gray-200');
+
       content2.classList.remove('hidden');
       content1.classList.add('hidden');
+      content3.classList.add('hidden'); // ✅ perbaikan
+    });
+    
+    tab3.addEventListener('click', () => {
+      tab3.classList.add('tab-active');
+      tab1.classList.remove('tab-active');
+      tab2.classList.remove('tab-active');
+      tab1.classList.add('bg-gray-200');
+      tab2.classList.add('bg-gray-200');
+
+      content3.classList.remove('hidden');
+      content1.classList.add('hidden');
+      content2.classList.add('hidden');
     });
   </script>
 
