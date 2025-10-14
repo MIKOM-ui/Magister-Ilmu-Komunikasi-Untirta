@@ -10,6 +10,9 @@
     body {
       font-family: 'Poppins', sans-serif;
     }
+    .tab-active {
+      @apply bg-blue-700 text-white;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -19,8 +22,8 @@
     <img src="https://upload.wikimedia.org/wikipedia/id/7/76/Logo_UNTIRTA.png" alt="Logo UNTIRTA" class="w-28 h-28 rounded-full mx-auto mb-4 shadow-md bg-white p-1">
     <h1 class="text-2xl md:text-3xl font-semibold">Program Magister Ilmu Komunikasi</h1>
     <h2 class="text-sm md:text-base opacity-90 mb-5">FISIP Universitas Sultan Ageng Tirtayasa</h2>
-    <a href="https://penerimaan.untirta.ac.id/JalurPenerimaan"
-       class="bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded-full inline-block hover:bg-yellow-300 transition transform hover:scale-105">
+    <a href="https://penerimaan.untirta.ac.id/Pendaftaran/949c2184-bd45-4ebf-96cf-f34241e3c8ea"
+       class="bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded-full inline-block hover:bg-yellow-300 transition transform hover:scale-105" target="_blank">
        Daftar Sekarang
     </a>
   </header>
@@ -62,22 +65,19 @@
 
     <!-- JADWAL PMB -->
     <section class="bg-white rounded-2xl shadow-md p-6">
-      <h3 class="text-xl md:text-2xl font-bold text-blue-800 mb-6 text-center">📅 Jadwal Penerimaan Mahasiswa Baru</h3>
+      <h3 class="text-xl md:text-2xl font-bold text-blue-800 mb-6 text-center">📅 Jadwal Penerimaan Mahasiswa Baru (Gelombang 1)</h3>
 
       <div class="grid gap-4 md:grid-cols-3">
-        <!-- Pendaftaran -->
         <div class="bg-blue-50 border-l-8 border-blue-700 rounded-xl p-5 shadow-sm hover:shadow-md transition">
           <h4 class="text-blue-700 font-semibold text-lg mb-2">Pendaftaran</h4>
           <p class="text-gray-700 font-medium">1 Oktober – 25 November 2025</p>
         </div>
 
-        <!-- Seleksi -->
         <div class="bg-blue-50 border-l-8 border-blue-700 rounded-xl p-5 shadow-sm hover:shadow-md transition">
           <h4 class="text-blue-700 font-semibold text-lg mb-2">Seleksi</h4>
           <p class="text-gray-700 font-medium">29 November 2025</p>
         </div>
 
-        <!-- Pengumuman -->
         <div class="bg-blue-50 border-l-8 border-blue-700 rounded-xl p-5 shadow-sm hover:shadow-md transition">
           <h4 class="text-blue-700 font-semibold text-lg mb-2">Pengumuman</h4>
           <p class="text-gray-700 font-medium">2 Desember 2025</p>
@@ -85,32 +85,108 @@
       </div>
     </section>
 
-    <!-- KONTAK -->
-    <section class="bg-white rounded-2xl shadow-md p-6 text-center">
-      <h3 class="text-xl md:text-2xl font-bold text-blue-800 mb-4">📞 Narahubung</h3>
-      <p class="text-lg font-semibold mb-5">0813-9819-5181</p>
+    <!-- TAB PERSYARATAN & PROSEDUR -->
+    <section class="bg-white rounded-2xl shadow-md p-6">
+      <h3 class="text-xl md:text-2xl font-bold text-blue-800 mb-6 text-center">📝 Persyaratan & Prosedur Pendaftaran</h3>
 
-      <div class="space-y-3">
-        <a href="https://mikom.fisip.untirta.ac.id" target="_blank"
-           class="block bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
-           🌐 Official Website
-        </a>
-        <a href="https://pmb.untirta.ac.id" target="_blank"
-           class="block bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
-           🧾 PMB UNTIRTA
-        </a>
-        <a href="https://penerimaan.untirta.ac.id/JalurPenerimaan" target="_blank"
-           class="block bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
-           📝 Jalur Penerimaan
-        </a>
+      <!-- Tabs -->
+      <div class="flex flex-wrap justify-center mb-6">
+        <button id="tab1" class="tab-active px-5 py-2 m-1 rounded-full font-semibold text-sm md:text-base hover:bg-blue-100 transition">Persyaratan</button>
+        <button id="tab2" class="px-5 py-2 m-1 rounded-full bg-gray-200 font-semibold text-sm md:text-base hover:bg-blue-100 transition">Prosedur</button>
       </div>
+
+      <!-- Tab Contents -->
+      <div id="content1" class="text-left space-y-4">
+        <ul class="list-disc pl-5 leading-relaxed text-sm md:text-base">
+          <li>Ijazah & Transkrip Nilai S-1</li>
+          <li>Sertifikat akreditasi program studi S-1 yang berlaku terakhir</li>
+          <li>Sertifikat TOEFL</li>
+          <li>Surat izin/tugas belajar dari Instansi tempat bekerja bagi pendaftar yang telah bekerja</li>
+          <li>Surat rekomendasi kelayakan akademik dari Dosen / teman sejawat</li>
+          <li>Surat pernyataan keaslian dokumen pendaftaran</li>
+          <li>Surat pernyataan kesanggupan pembiayaan</li>
+        </ul>
+      </div>
+
+      <div id="content2" class="hidden text-left space-y-4">
+        <p class="leading-relaxed text-sm md:text-base">
+          Pendaftaran dilakukan melalui halaman resmi <b>Penerimaan Mahasiswa Baru</b> dengan Formulir Pendaftaran
+UMM PASCASARJANA (Magister - S2). Setelah mengisi form, klik <b>Daftar</b> dan cetak formulir dan lakukan pembayaran melalui rekening <b>Virtual Account pembayaran</b> guna aktivasi pendaftaran.
+        </p>
+
+        <h4 class="font-semibold text-blue-800">💰 Biaya Pendaftaran & Perkuliahan:</h4>
+        <table class="table-auto border-collapse w-full text-sm md:text-base mt-3">
+          <tbody>
+            <tr><td class="border p-2">Pendaftaran</td><td class="border p-2 text-right">Rp 500.000</td></tr>
+            <tr><td class="border p-2">SPP Per Semester</td><td class="border p-2 text-right">Rp 8.500.000</td></tr>
+            <tr><td class="border p-2">Matrikulasi</td><td class="border p-2 text-right">Rp 1.000.000</td></tr>
+            <tr><td class="border p-2">Jaket Almamater, Kartu Perpustakaan</td><td class="border p-2 text-right">Rp 550.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="text-center mt-8">
+          <a href="https://drive.google.com/file/d/1i-dgvgfrZAF5KvzE7XpJGppSNwAgfx84/view?usp=sharing"
+           class="bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded-full inline-block hover:bg-yellow-300 transition transform hover:scale-105" target="_blank">
+           Download Dokumen Pendaftaran
+        </a>
+        </div>
     </section>
+
+    <!-- KONTAK -->
+<section class="bg-white rounded-2xl shadow-md p-6 text-center">
+  <h3 class="text-xl md:text-2xl font-bold text-blue-800 mb-4">📞 Narahubung</h3>
+  
+  <a href="https://wa.me/6281398195181" target="_blank"
+     class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold mb-6 transition transform hover:scale-105">
+     💬 Hubungi via WhatsApp
+  </a>
+
+  <div class="space-y-3">
+    <a href="https://mikom.fisip.untirta.ac.id" target="_blank"
+       class="block bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
+       🌐 Official Website
+    </a>
+    <a href="https://pmb.untirta.ac.id" target="_blank"
+       class="block bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
+       🧾 PMB UNTIRTA
+    </a>
+    <a href="https://penerimaan.untirta.ac.id/JalurPenerimaan" target="_blank"
+       class="block bg-blue-700 text-white py-3 rounded-xl font-semibold hover:bg-blue-800 transition">
+       📝 Jalur Penerimaan
+    </a>
+  </div>
+</section>
+
   </main>
 
   <!-- FOOTER -->
   <footer class="bg-blue-800 text-white text-center py-4 text-sm rounded-t-2xl shadow-inner">
     © 2025 Program Magister Ilmu Komunikasi FISIP UNTIRTA
   </footer>
+
+  <!-- SIMPLE TAB SCRIPT -->
+  <script>
+    const tab1 = document.getElementById('tab1');
+    const tab2 = document.getElementById('tab2');
+    const content1 = document.getElementById('content1');
+    const content2 = document.getElementById('content2');
+
+    tab1.addEventListener('click', () => {
+      tab1.classList.add('tab-active');
+      tab2.classList.remove('tab-active');
+      tab2.classList.add('bg-gray-200');
+      content1.classList.remove('hidden');
+      content2.classList.add('hidden');
+    });
+
+    tab2.addEventListener('click', () => {
+      tab2.classList.add('tab-active');
+      tab1.classList.remove('tab-active');
+      tab1.classList.add('bg-gray-200');
+      content2.classList.remove('hidden');
+      content1.classList.add('hidden');
+    });
+  </script>
 
 </body>
 </html>
