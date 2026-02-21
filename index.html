@@ -334,10 +334,13 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="bg-blue-800 text-white text-center py-4 text-sm rounded-t-2xl shadow-inner">
-    © 2025 Program Magister Ilmu Komunikasi FISIP UNTIRTA
+    © <span id="year"></span> Program Magister Ilmu Komunikasi FISIP UNTIRTA
   </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
   <script>
     // Accordion toggle
